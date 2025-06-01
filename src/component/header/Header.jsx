@@ -19,7 +19,7 @@ const Header = () => {
     { label: "Tạo", hasDropdown: true },
     { label: "Dành cho công việc", hasDropdown: true },
     { label: "Tìm hiểu", hasDropdown: true },
-    { label: "Giá", hasDropdown: false },
+    { label: "Giá", path: "/price", hasDropdown: false },
     { label: "Giới thiệu", hasDropdown: true },
   ];
 
@@ -28,7 +28,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="">
+          <Link to="/" className="!no-underline ">
             <div className="flex items-center">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
@@ -48,9 +48,13 @@ const Header = () => {
           </Link>
 
           {/* Navigation Menu */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8 w-full">
             {navItems.map((item, index) => (
-              <div key={index} className="relative">
+              <Link
+                to={item.path}
+                key={index}
+                className="relative !no-underline"
+              >
                 <button
                   onClick={() => item.hasDropdown && toggleDropdown(item.label)}
                   className="flex items-center space-x-1 text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-200"
@@ -98,7 +102,7 @@ const Header = () => {
                     </a>
                   </div>
                 )}
-              </div>
+              </Link>
             ))}
           </nav>
 

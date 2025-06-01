@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 import {
   Play,
   ChevronDown,
@@ -14,13 +14,13 @@ import {
   GraduationCap,
   FileText,
   Presentation,
-} from "lucide-react"
+} from "lucide-react";
 
 const HomePage = () => {
-  const [selectedKhoi, setSelectedKhoi] = useState("")
-  const [selectedChuong, setSelectedChuong] = useState("")
-  const [selectedSlideType, setSelectedSlideType] = useState("")
-  const [isGenerating, setIsGenerating] = useState(false)
+  const [selectedKhoi, setSelectedKhoi] = useState("");
+  const [selectedChuong, setSelectedChuong] = useState("");
+  const [selectedSlideType, setSelectedSlideType] = useState("");
+  const [isGenerating, setIsGenerating] = useState(false);
 
   // Dữ liệu khối lớp
   const khoiOptions = [
@@ -28,7 +28,7 @@ const HomePage = () => {
     { value: "thcs", label: "THCS (Lớp 6-9)" },
     { value: "thpt", label: "THPT (Lớp 10-12)" },
     { value: "dai-hoc", label: "Đại học" },
-  ]
+  ];
 
   // Dữ liệu chương theo khối
   const chuongOptions = {
@@ -58,7 +58,7 @@ const HomePage = () => {
       { value: "kinh-te", label: "Kinh tế - Vi mô" },
       { value: "ngoai-ngu", label: "Ngoại ngữ - IELTS" },
     ],
-  }
+  };
 
   // Các kiểu slide
   const slideTypes = [
@@ -86,7 +86,7 @@ const HomePage = () => {
       description: "Bài tập và ví dụ minh họa",
       icon: <Presentation className="w-6 h-6" />,
     },
-  ]
+  ];
 
   // Ví dụ các video đã tạo
   const exampleVideos = [
@@ -134,31 +134,35 @@ const HomePage = () => {
       views: "1.5k",
       rating: 4.6,
     },
-  ]
+  ];
 
   // Các tính năng nổi bật
   const features = [
     {
       icon: <GraduationCap className="w-8 h-8" />,
       title: "Theo chương trình chuẩn",
-      description: "Nội dung được thiết kế theo chương trình giáo dục của Bộ GD&ĐT",
+      description:
+        "Nội dung được thiết kế theo chương trình giáo dục của Bộ GD&ĐT",
     },
     {
       icon: <Presentation className="w-8 h-8" />,
       title: "Đa dạng kiểu slide",
-      description: "Từ slide cơ bản đến tương tác, hoạt hình phù hợp với từng bài học",
+      description:
+        "Từ slide cơ bản đến tương tác, hoạt hình phù hợp với từng bài học",
     },
     {
       icon: <Clock className="w-8 h-8" />,
       title: "Tạo nhanh chóng",
-      description: "Chỉ cần chọn khối, chương và kiểu slide, video sẽ được tạo tự động",
+      description:
+        "Chỉ cần chọn khối, chương và kiểu slide, video sẽ được tạo tự động",
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Dành cho giáo viên",
-      description: "Công cụ hoàn hảo giúp giáo viên chuẩn bị bài giảng hiệu quả",
+      description:
+        "Công cụ hoàn hảo giúp giáo viên chuẩn bị bài giảng hiệu quả",
     },
-  ]
+  ];
 
   // Các bước thực hiện
   const steps = [
@@ -182,24 +186,24 @@ const HomePage = () => {
       title: "Tạo video",
       description: "AI sẽ tự động tạo video bài giảng hoàn chỉnh",
     },
-  ]
+  ];
 
   const handleGenerate = () => {
     if (!selectedKhoi || !selectedChuong || !selectedSlideType) {
-      alert("Vui lòng chọn đầy đủ thông tin!")
-      return
+      alert("Vui lòng chọn đầy đủ thông tin!");
+      return;
     }
-    setIsGenerating(true)
+    setIsGenerating(true);
     // Simulate API call
     setTimeout(() => {
-      setIsGenerating(false)
-      alert("Video đã được tạo thành công!")
-    }, 3000)
-  }
+      setIsGenerating(false);
+      alert("Video đã được tạo thành công!");
+    }, 3000);
+  };
 
   const getCurrentChuongOptions = () => {
-    return chuongOptions[selectedKhoi] || []
-  }
+    return chuongOptions[selectedKhoi] || [];
+  };
 
   return (
     <main className="flex-grow">
@@ -212,7 +216,8 @@ const HomePage = () => {
               <span className="text-yellow-300">theo chương trình chuẩn</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Chọn khối lớp, chương học và kiểu slide - AI sẽ tự động tạo video bài giảng chuyên nghiệp
+              Chọn khối lớp, chương học và kiểu slide - AI sẽ tự động tạo video
+              bài giảng chuyên nghiệp
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-purple-600 font-medium py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-md">
@@ -230,8 +235,12 @@ const HomePage = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Tạo video bài giảng ngay</h2>
-            <p className="text-xl text-gray-600">Chỉ cần 3 bước đơn giản để có video bài giảng hoàn chỉnh</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Tạo video bài giảng ngay
+            </h2>
+            <p className="text-xl text-gray-600">
+              Chỉ cần 3 bước đơn giản để có video bài giảng hoàn chỉnh
+            </p>
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-8">
@@ -246,8 +255,8 @@ const HomePage = () => {
                   <select
                     value={selectedKhoi}
                     onChange={(e) => {
-                      setSelectedKhoi(e.target.value)
-                      setSelectedChuong("") // Reset chương khi đổi khối
+                      setSelectedKhoi(e.target.value);
+                      setSelectedChuong(""); // Reset chương khi đổi khối
                     }}
                     className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent appearance-none bg-white"
                   >
@@ -313,14 +322,34 @@ const HomePage = () => {
             {/* Hiển thị thông tin đã chọn */}
             {(selectedKhoi || selectedChuong || selectedSlideType) && (
               <div className="mb-6 p-4 bg-purple-50 rounded-lg border border-purple-200">
-                <h4 className="font-medium text-purple-900 mb-2">Thông tin đã chọn:</h4>
+                <h4 className="font-medium text-purple-900 mb-2">
+                  Thông tin đã chọn:
+                </h4>
                 <div className="text-sm text-purple-700 space-y-1">
-                  {selectedKhoi && <p>• Khối: {khoiOptions.find((k) => k.value === selectedKhoi)?.label}</p>}
+                  {selectedKhoi && (
+                    <p>
+                      • Khối:{" "}
+                      {khoiOptions.find((k) => k.value === selectedKhoi)?.label}
+                    </p>
+                  )}
                   {selectedChuong && (
-                    <p>• Chương: {getCurrentChuongOptions().find((c) => c.value === selectedChuong)?.label}</p>
+                    <p>
+                      • Chương:{" "}
+                      {
+                        getCurrentChuongOptions().find(
+                          (c) => c.value === selectedChuong
+                        )?.label
+                      }
+                    </p>
                   )}
                   {selectedSlideType && (
-                    <p>• Kiểu slide: {slideTypes.find((s) => s.value === selectedSlideType)?.label}</p>
+                    <p>
+                      • Kiểu slide:{" "}
+                      {
+                        slideTypes.find((s) => s.value === selectedSlideType)
+                          ?.label
+                      }
+                    </p>
                   )}
                 </div>
               </div>
@@ -330,7 +359,12 @@ const HomePage = () => {
             <div className="text-center">
               <button
                 onClick={handleGenerate}
-                disabled={!selectedKhoi || !selectedChuong || !selectedSlideType || isGenerating}
+                disabled={
+                  !selectedKhoi ||
+                  !selectedChuong ||
+                  !selectedSlideType ||
+                  isGenerating
+                }
                 className="bg-gradient-to-r from-purple-500 to-purple-600 text-white font-medium py-4 px-8 rounded-lg hover:from-purple-600 hover:to-purple-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors duration-200 flex items-center justify-center mx-auto shadow-sm hover:shadow-md"
               >
                 {isGenerating ? (
@@ -354,8 +388,12 @@ const HomePage = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Các kiểu slide có sẵn</h2>
-            <p className="text-xl text-gray-600">Chọn kiểu slide phù hợp với nội dung bài học của bạn</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Các kiểu slide có sẵn
+            </h2>
+            <p className="text-xl text-gray-600">
+              Chọn kiểu slide phù hợp với nội dung bài học của bạn
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -367,7 +405,9 @@ const HomePage = () => {
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 text-purple-600">
                   {type.icon}
                 </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">{type.label}</h3>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">
+                  {type.label}
+                </h3>
                 <p className="text-gray-600 text-sm">{type.description}</p>
               </div>
             ))}
@@ -379,8 +419,12 @@ const HomePage = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Cách thức hoạt động</h2>
-            <p className="text-xl text-gray-600">Quy trình đơn giản chỉ với 4 bước</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Cách thức hoạt động
+            </h2>
+            <p className="text-xl text-gray-600">
+              Quy trình đơn giản chỉ với 4 bước
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -394,7 +438,9 @@ const HomePage = () => {
                     <ArrowRight className="hidden md:block absolute top-8 -right-3 w-6 h-6 text-gray-300" />
                   )}
                 </div>
-                <h3 className="text-lg font-medium text-gray-900 mb-2">{step.title}</h3>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">
+                  {step.title}
+                </h3>
                 <p className="text-gray-600 text-sm">{step.description}</p>
               </div>
             ))}
@@ -406,8 +452,12 @@ const HomePage = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Tại sao chọn EduVision?</h2>
-            <p className="text-xl text-gray-600">Công nghệ AI kết hợp chương trình giáo dục chuẩn</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Tại sao chọn EduVision?
+            </h2>
+            <p className="text-xl text-gray-600">
+              Công nghệ AI kết hợp chương trình giáo dục chuẩn
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -419,7 +469,9 @@ const HomePage = () => {
                 <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-4 text-purple-600">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-medium text-gray-900 mb-2">{feature.title}</h3>
+                <h3 className="text-xl font-medium text-gray-900 mb-2">
+                  {feature.title}
+                </h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
@@ -431,8 +483,12 @@ const HomePage = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Video mẫu đã tạo</h2>
-            <p className="text-xl text-gray-600">Xem các video bài giảng được tạo theo chương trình chuẩn</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Video mẫu đã tạo
+            </h2>
+            <p className="text-xl text-gray-600">
+              Xem các video bài giảng được tạo theo chương trình chuẩn
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -457,11 +513,15 @@ const HomePage = () => {
                   </div>
                 </div>
                 <div className="p-4">
-                  <h3 className="font-medium text-gray-900 mb-2 line-clamp-2">{video.title}</h3>
+                  <h3 className="font-medium text-gray-900 mb-2 line-clamp-2">
+                    {video.title}
+                  </h3>
                   <div className="space-y-1 mb-3">
                     <p className="text-xs text-gray-500">Khối: {video.khoi}</p>
                     <p className="text-xs text-gray-500">{video.chuong}</p>
-                    <p className="text-xs text-purple-600 font-medium">{video.slideType}</p>
+                    <p className="text-xs text-purple-600 font-medium">
+                      {video.slideType}
+                    </p>
                   </div>
                   <div className="flex justify-between items-center text-xs text-gray-500">
                     <span>{video.views} lượt xem</span>
@@ -480,8 +540,12 @@ const HomePage = () => {
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-purple-500 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Sẵn sàng tạo video bài giảng đầu tiên?</h2>
-          <p className="text-xl mb-8">Tham gia cùng hàng nghìn giáo viên đã tin tưởng sử dụng EduVision</p>
+          <h2 className="text-3xl font-bold mb-4">
+            Sẵn sàng tạo video bài giảng đầu tiên?
+          </h2>
+          <p className="text-xl mb-8">
+            Tham gia cùng hàng nghìn giáo viên đã tin tưởng sử dụng EduVision
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-white text-purple-600 font-medium py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-sm">
               Bắt đầu miễn phí
@@ -508,7 +572,7 @@ const HomePage = () => {
         </div>
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
